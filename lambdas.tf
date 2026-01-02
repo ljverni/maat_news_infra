@@ -23,8 +23,6 @@ resource "aws_lambda_function" "this" {
 
   lifecycle {
     ignore_changes = [
-      filename,
-      source_code_hash,
       runtime,
       handler
     ]
@@ -32,7 +30,7 @@ resource "aws_lambda_function" "this" {
 
   environment {
     variables = {
-      S3_BUCKET_NAME = aws_s3_bucket.ingestion_prod.bucket
+      S3_BUCKET_NAME = aws_s3_bucket.ingestion_dev.bucket
     }
   }
 }
