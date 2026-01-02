@@ -4,7 +4,6 @@ on:
   pull_request:
     paths:
       - "**/*.tf"
-      - "lambdas/**"
       - ".github/workflows/terraform-ci.yml"
 
 env:

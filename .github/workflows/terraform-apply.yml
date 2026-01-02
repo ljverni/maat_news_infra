@@ -1,9 +1,10 @@
 name: Terraform Apply
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Terraform CI"]
+    types:
+      - completed
 
 env:
   TF_IN_AUTOMATION: true
