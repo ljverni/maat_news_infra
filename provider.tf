@@ -7,6 +7,14 @@ terraform {
   }
 
   required_version = ">= 1.2"
+
+  backend "s3" {
+    bucket         = "terraform-maat-news"
+    key            = "terraform.tfstate"
+    region         = "eu-south-2"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
 }
 
 # Configure the AWS Provider
