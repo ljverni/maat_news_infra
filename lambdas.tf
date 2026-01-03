@@ -51,11 +51,11 @@ resource "aws_lambda_function" "this" {
       filename,
       source_code_hash
     ]
-  }
 
-  # Force replacement only if runtime or handler changes
-  lifecycle {
     create_before_destroy = true
     prevent_destroy       = false
   }
+
+  
+
 }
